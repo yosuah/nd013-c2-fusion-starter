@@ -1,0 +1,8 @@
+dataset/*
+results/*
+results_darknet/*
+results_resnet/*
+*.pyc
+*.pth
+tools/waymo_reader/dist/*
+tools/objdet_models/darknet/pretrained/*
