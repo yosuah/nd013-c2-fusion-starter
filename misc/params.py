@@ -15,11 +15,11 @@ dim_state = 6 # process model dimension
 
 # Kalman filter parameters (Step 1)
 dt = 0.1 # time increment
-q=3 # process noise variable for Kalman filter Q
+q = 3 # process noise variable for Kalman filter Q
 
 # track management parameters (Step 2)
 confirmed_threshold = 0.8 # track score threshold to switch from 'tentative' to 'confirmed'
-delete_threshold = 0.6 # track score threshold to delete confirmed tracks
+delete_threshold = 0.3 # track score threshold to delete confirmed tracks
 window = 6 # number of frames for track score calculation
 max_P = 3**2 # delete track if covariance of px or py bigger than this
 sigma_p44 = 50 # initial setting for estimation error covariance P entry for vx

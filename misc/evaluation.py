@@ -230,18 +230,20 @@ def plot_rmse(manager, all_labels, configs_det):
         
         
 def make_movie(path):
+    import tqdm
     # read track plots
     images = [img for img in sorted(os.listdir(path)) if img.endswith(".png")]
     frame = cv2.imread(os.path.join(path, images[0]))
     height, width, layers = frame.shape
 
     # save with 10fps to result dir
-    video = cv2.VideoWriter(os.path.join(path, 'my_tracking_results.avi'), 0, 10, (width,height))
+    video = cv2.VideoWriter(os.path.join(path, 'my_tracking_results.avi'), 0, 10, (width, height))
 
-    for image in images:
+    for image in tqdm.tqdm(images):
         fname = os.path.join(path, image)
         video.write(cv2.imread(fname))
-        os.remove(fname) # clean up
+        # os.remove(fname) # clean up
 
     cv2.destroyAllWindows()
     video.release()
+    print("Creating video finished")
