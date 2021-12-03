@@ -21,6 +21,8 @@ For a full description of the project and setup instruction please see the [orig
 
 Answers to the project questions are in [writeup.md](writeup.md)
 
+To see all changes I made use [this compariso](https://github.com/yosuah/udacity_sd_lidar_fusion/compare/40fd7dcc0fe07d5d798a6460d9a2a1ed6e7262a4...HEAD) with the last commit to the framework.
+
 # Solution - Lidar-Camera fusion and object tracking
 
 Final tracking output, using both Lidar and camera detections, 

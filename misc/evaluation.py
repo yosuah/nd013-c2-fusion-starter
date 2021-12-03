@@ -13,7 +13,7 @@
 # imports
 import numpy as np
 import matplotlib
-matplotlib.use('wxagg') # change backend so that figure maximizing works on Mac as well     
+# matplotlib.use('wxagg') # change backend so that figure maximizing works on Mac as well     
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 from matplotlib.path import Path
@@ -230,7 +230,6 @@ def plot_rmse(manager, all_labels, configs_det):
         
         
 def make_movie(path):
-    import tqdm
     # read track plots
     images = [img for img in sorted(os.listdir(path)) if img.endswith(".png")]
     frame = cv2.imread(os.path.join(path, images[0]))
@@ -239,7 +238,7 @@ def make_movie(path):
     # save with 10fps to result dir
     video = cv2.VideoWriter(os.path.join(path, 'my_tracking_results.avi'), 0, 10, (width, height))
 
-    for image in tqdm.tqdm(images):
+    for image in images:
         fname = os.path.join(path, image)
         video.write(cv2.imread(fname))
         # os.remove(fname) # clean up
